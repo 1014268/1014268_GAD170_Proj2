@@ -9,6 +9,8 @@ public class CharacterStats : MonoBehaviour
     public Sprite mySprite;
     public int health;
     public int damage;
+    public int speed;
+    public int spellpower;
 
 
     #region VFX & SFX
