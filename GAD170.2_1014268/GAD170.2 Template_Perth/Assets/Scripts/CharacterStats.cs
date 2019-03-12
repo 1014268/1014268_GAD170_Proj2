@@ -8,9 +8,14 @@ public class CharacterStats : MonoBehaviour
     public string myName;
     public Sprite mySprite;
     public int health;
-    public int damage;
+    public int attack;
+    public int defence;
+    public int spAttack;
+    public int spDefence;
     public int speed;
-    public int spellpower;
+
+    //Needs to be updated....changed?
+    public int damage;
 
 
     #region VFX & SFX
@@ -27,3 +32,8 @@ public class CharacterStats : MonoBehaviour
     }
     #endregion
 }
+
+public class StatConversions : MonoBehaviour
+{
+}
+
