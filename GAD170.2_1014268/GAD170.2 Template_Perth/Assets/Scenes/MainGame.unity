@@ -535,18 +535,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 331641213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611e39e357a9ad54b8443b36dd90f009, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: 
+  myName: 0
   mySprite: {fileID: 0}
-  health: 0
+  health: 100
   attack: 0
   defence: 0
   spAttack: 0
   spDefence: 0
   speed: 0
-  damage: 10
 --- !u!212 &331641216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2660,6 +2659,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6f9b0e984cb47749b6b34a49aaa5130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   heroes: {fileID: 0}
