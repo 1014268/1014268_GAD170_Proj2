@@ -2,7 +2,7 @@
 
 public class CharacterStats : MonoBehaviour
 {
-    public int myName;
+    public string myName;
     public Sprite mySprite;
 
     //Base Stats
@@ -21,12 +21,13 @@ public class CharacterStats : MonoBehaviour
     public int spellResist { get; private set; }
     public int cooldown { get; private set; }
 
-    public int currentHealth { get; private set; }
+    public static int currentHealth { get; private set; }
 
     void Awake()
     {
         maxHealth = health;
         currentHealth = maxHealth;
+        cooldown = (10 - 10 * speed / 100);
     }
     
     public void TakeDamage (int damage)

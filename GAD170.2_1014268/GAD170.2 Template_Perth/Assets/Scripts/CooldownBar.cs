@@ -4,15 +4,18 @@ using UnityEngine;
 
 
 
+
 public class CooldownBar : MonoBehaviour
 {
-    public float cooldown = 10;
+    public float maxCooldown;
     public float cooldownTimer;
-    public GameObject Speed;
+    public CharacterStats characterStats;
 
-    void Start()
+    void Awake()
     {
-        cooldownTimer = cooldown;
+        //CharacterStats stats = GetComponent<CharacterStats>();
+        maxCooldown = characterStats.cooldown;
+        cooldownTimer = maxCooldown;
         
     }
 
@@ -27,14 +30,14 @@ public class CooldownBar : MonoBehaviour
         {
             cooldownTimer = 0;
             Attack();
-            cooldownTimer = cooldown;
+            cooldownTimer = maxCooldown;
         }
         Scale();
     }
 
-       void Scale()
+    void Scale()
     {
-        transform.localScale = new Vector3(cooldownTimer/cooldown, 1, 1);
+        transform.localScale = new Vector3(cooldownTimer/maxCooldown, 1, 1);
     }
        
     

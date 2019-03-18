@@ -538,14 +538,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: 0
+  myName: 
   mySprite: {fileID: 0}
   health: 100
   attack: 0
   defence: 0
   spAttack: 0
   spDefence: 0
-  speed: 0
+  speed: 40
 --- !u!212 &331641216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1353,6 +1353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713991647}
   - component: {fileID: 713991649}
+  - component: {fileID: 713991648}
   m_Layer: 0
   m_Name: DPS
   m_TagString: Untagged
@@ -1375,6 +1376,26 @@ Transform:
   m_Father: {fileID: 2010562833}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &713991648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713991646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myName: 
+  mySprite: {fileID: 0}
+  health: 0
+  attack: 0
+  defence: 0
+  spAttack: 0
+  spDefence: 0
+  speed: 85
 --- !u!212 &713991649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2057,9 +2078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753a46d353d24ea4a8ad674ffa4ed806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
+  maxCooldown: 0
   cooldownTimer: 0
-  Speed: {fileID: 1123554999}
+  characterStats: {fileID: 331641215}
 --- !u!1 &1131072059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260380787}
   - component: {fileID: 1260380788}
+  - component: {fileID: 1260380789}
   m_Layer: 0
   m_Name: Speed
   m_TagString: Untagged
@@ -2298,6 +2320,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1260380789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260380786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753a46d353d24ea4a8ad674ffa4ed806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCooldown: 0
+  cooldownTimer: 0
+  characterStats: {fileID: 713991648}
 --- !u!1 &1302483941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302867687}
   - component: {fileID: 1302867689}
+  - component: {fileID: 1302867688}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -2362,6 +2400,26 @@ Transform:
   m_Father: {fileID: 2010562833}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1302867688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302867686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myName: 
+  mySprite: {fileID: 0}
+  health: 0
+  attack: 0
+  defence: 0
+  spAttack: 0
+  spDefence: 0
+  speed: 50
 --- !u!212 &1302867689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2658,25 +2716,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592561279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6f9b0e984cb47749b6b34a49aaa5130, type: 3}
+  m_Script: {fileID: 11500000, guid: d7568777a13396847aa715238788f079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroes: {fileID: 0}
-  monsters: {fileID: 0}
-  spawnPoints:
+  heroes:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 2014948470}
-  - {fileID: 1842186815}
-  - {fileID: 385042840}
-  ouputLog: {fileID: 660778974}
-  knight: {fileID: 6302445448657814289, guid: b3fbf537a4792b64ba2a07f1b1108eae, type: 3}
-  boar: {fileID: 1653492368617479761, guid: 7121c1b14a519f04fa283727fe4c8c07, type: 3}
-  hurt: {fileID: 0}
-  atack: {fileID: 0}
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  heroSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemySpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  heroPrefabs: []
+  enemyPrefabs: []
 --- !u!4 &1592561281
 Transform:
   m_ObjectHideFlags: 0
@@ -3143,6 +3203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069509390}
   - component: {fileID: 2069509391}
+  - component: {fileID: 2069509392}
   m_Layer: 0
   m_Name: Speed
   m_TagString: Untagged
@@ -3212,3 +3273,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2069509392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069509389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753a46d353d24ea4a8ad674ffa4ed806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCooldown: 0
+  cooldownTimer: 0
+  characterStats: {fileID: 1302867688}
