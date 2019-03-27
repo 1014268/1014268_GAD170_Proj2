@@ -8,6 +8,20 @@ public class HealthBar : MonoBehaviour
     public float currentHealth;
     public CharacterStats characterStats;
     
+
+    void TakeDamage(int damage)
+    {
+        currentHealth =- damage;
+
+        //if currentHealth <= 0 Die
+    }
+
+    
+    void Scale()
+    {
+        transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
+    }
+       
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,11 +31,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //something about taking damage....
-
-        void Scale()
-        {
-            transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
-        }
+        Scale();
     }
 }

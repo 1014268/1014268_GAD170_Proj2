@@ -11,7 +11,7 @@ public class CooldownBar : MonoBehaviour
     public float cooldownTimer;
     public CharacterStats characterStats;
 
-    void Awake()
+    void Start()
     {
         //CharacterStats stats = GetComponent<CharacterStats>();
         maxCooldown = characterStats.cooldown;
@@ -29,7 +29,7 @@ public class CooldownBar : MonoBehaviour
         if (cooldownTimer < 0)
         {
             cooldownTimer = 0;
-            Attack();
+            //Attack();
             cooldownTimer = maxCooldown;
         }
         Scale();
@@ -43,6 +43,17 @@ public class CooldownBar : MonoBehaviour
     
     void Attack()
     {
+        BattleLogic battleLogic = GetComponent<BattleLogic>();
+
+        if(characterStats.faction == "hero")
+        {
+            battleLogic.GetFirstEnemy();
+        }
+        else
+        {
+
+        }
+        //TakeDamage(characterStats.damage)
         Debug.Log("In theory... they just attacked...");
     }
 }

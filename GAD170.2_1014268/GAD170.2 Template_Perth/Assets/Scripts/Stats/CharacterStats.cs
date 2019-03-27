@@ -3,6 +3,7 @@
 public class CharacterStats : MonoBehaviour
 {
     public string myName;
+    public string faction;
     public Sprite mySprite;
 
     //Base Stats
@@ -13,36 +14,29 @@ public class CharacterStats : MonoBehaviour
     public int spDefence;
     public int speed;
 
-    
     public int maxHealth { get; private set; }
-    public int damage { get; private set; }
-    public int resist { get; private set; }
-    public int spellPower { get; private set; }
-    public int spellResist { get; private set; }
     public int cooldown { get; private set; }
+    public int currentHealth { get; private set; }
 
-    public static int currentHealth { get; private set; }
-
-    void Awake()
+    void Start()
     {
         maxHealth = health;
         currentHealth = maxHealth;
         cooldown = (10 - 10 * speed / 100);
     }
-    
-    public void TakeDamage (int damage)
+
+        void TakeDamage(int damage)
     {
-        damage -= (resist / 100) * damage;
+        currentHealth = -damage;
 
-        currentHealth -= damage;
-        Debug.Log("Ouch! " + myName + " just took " + damage + " damage!");
-
-        if (currentHealth <=0 )
-        {
-            Die();
-        }
+        //if currentHealth <= 0 Die
     }
 
+
+    void Scale()
+    {
+        transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
+    }
 
     public void TakeSpDamage(int spDamage)
     {

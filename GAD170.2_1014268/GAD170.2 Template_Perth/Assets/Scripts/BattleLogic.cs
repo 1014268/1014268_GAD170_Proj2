@@ -10,16 +10,37 @@ public class BattleLogic : MonoBehaviour
     public Transform[] heroSpawnPoints = new Transform[3];
     public Transform[] enemySpawnPoints = new Transform[3];
 
-    public GameObject[] heroPrefabs;
-    public GameObject[] enemyPrefabs;
+    public GameObject[] heroPrefabs = new GameObject[3];
+    public GameObject[] enemyPrefabs = new GameObject[3];
 
+    
+    void Start()
+    {
+        SpawnIn();
+    }
 
     void SpawnIn()
     {
-        //change 'i' into something else?
-        for (int i = 0; i < 3; i++)
+        
+        for (int p = 0; p < 3; p++)
         {
-            Instantiate(heroPrefabs[i], heroSpawnPoints[i].position, Quaternion.identity);
+            Instantiate(heroPrefabs[p], heroSpawnPoints[p].position, Quaternion.identity);
+        }
+
+        for (int p = 0; p < 3; p++)
+        {
+            Instantiate(enemyPrefabs[p], enemySpawnPoints[p].position, Quaternion.identity);
         }
     }
+
+    public GameObject GetFirstEnemy()
+    {
+        return enemyPrefabs[0];
+    }
+    
+    public GameObject GetFirstHero()
+    {
+        return heroPrefabs[0];
+    }
+        
 }
