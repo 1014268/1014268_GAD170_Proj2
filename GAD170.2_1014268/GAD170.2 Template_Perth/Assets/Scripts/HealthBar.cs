@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth;
+    public int currentHealth;
     public CharacterStats characterStats;
     
 
     void TakeDamage(int damage)
     {
         currentHealth =- damage;
-
-        //if currentHealth <= 0 Die
     }
 
     
@@ -21,16 +19,26 @@ public class HealthBar : MonoBehaviour
     {
         transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
     }
+
+    void Die()
+    {
+        if (currentHealth <=0)
+        {
+            Destroy(gameObject);
+        }
+    }
        
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        currentHealth = characterStats.maxHealth;
+        maxHealth = characterStats.health;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         Scale();
+        Die();
     }
 }

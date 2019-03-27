@@ -2,21 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
 public class CooldownBar : MonoBehaviour
 {
     public float maxCooldown;
     public float cooldownTimer;
     public CharacterStats characterStats;
+    public BattleLogic battleLogic;
+    SpriteRenderer spriteRenderer;
 
+    
+
+    void Scale()
+        //This function should adjust the cooldown timers size
+    {
+        transform.localScale = new Vector3(cooldownTimer/maxCooldown, 1, 1);
+    }
+/*      
+    void Attack()
+    {
+        //Not sure if I need this line?
+        //BattleLogic battleLogic = GetComponent<BattleLogic>();
+        if(characterStats.faction == "hero")
+        {
+
+        }
+        else
+        {
+            GetFirstHero
+        }
+    }
+ */    
     void Start()
     {
-        //CharacterStats stats = GetComponent<CharacterStats>();
         maxCooldown = characterStats.cooldown;
         cooldownTimer = maxCooldown;
-        
+
     }
 
     void Update()
@@ -33,27 +53,5 @@ public class CooldownBar : MonoBehaviour
             cooldownTimer = maxCooldown;
         }
         Scale();
-    }
-
-    void Scale()
-    {
-        transform.localScale = new Vector3(cooldownTimer/maxCooldown, 1, 1);
-    }
-       
-    
-    void Attack()
-    {
-        BattleLogic battleLogic = GetComponent<BattleLogic>();
-
-        if(characterStats.faction == "hero")
-        {
-            battleLogic.GetFirstEnemy();
-        }
-        else
-        {
-
-        }
-        //TakeDamage(characterStats.damage)
-        Debug.Log("In theory... they just attacked...");
     }
 }

@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44055554498340761}
   - component: {fileID: 3951568255261811259}
+  - component: {fileID: 6204354440831333544}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -239,6 +240,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6204354440831333544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287878030276274508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43df55d050ee6fc4484f0196ef511201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  characterStats: {fileID: 6158702301835055294}
 --- !u!1 &3495064415392457890
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +579,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 01e4754db0bacb342a69fbead50b71cd, type: 3}
-  m_Color: {r: 0, g: 0.47701436, b: 0.7830189, a: 1}
+  m_Color: {r: 1, g: 0.80684906, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -597,8 +613,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6472451344619289776}
-  - component: {fileID: 4431771610521050901}
   - component: {fileID: 6158702301835055294}
+  - component: {fileID: 4431771610521050901}
   m_Layer: 0
   m_Name: Hero3
   m_TagString: Untagged
@@ -621,6 +637,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6158702301835055294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910816151108434882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myName: 
+  faction: hero
+  mySprite: {fileID: 21300000, guid: a793af9a11ad2334aa1b5bfc65c6765c, type: 3}
+  health: 50
+  attack: 0
+  defence: 30
+  spAttack: 70
+  spDefence: 50
+  speed: 45
 --- !u!212 &4431771610521050901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -669,24 +706,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6158702301835055294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7910816151108434882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myName: 
-  faction: hero
-  mySprite: {fileID: 0}
-  health: 0
-  attack: 0
-  defence: 0
-  spAttack: 0
-  spDefence: 0
-  speed: 45

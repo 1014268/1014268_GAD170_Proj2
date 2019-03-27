@@ -16,37 +16,12 @@ public class CharacterStats : MonoBehaviour
 
     public int maxHealth { get; private set; }
     public int cooldown { get; private set; }
-    public int currentHealth { get; private set; }
+   
 
     void Start()
     {
         maxHealth = health;
-        currentHealth = maxHealth;
         cooldown = (10 - 10 * speed / 100);
-    }
-
-        void TakeDamage(int damage)
-    {
-        currentHealth = -damage;
-
-        //if currentHealth <= 0 Die
-    }
-
-
-    void Scale()
-    {
-        transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
-    }
-
-    public void TakeSpDamage(int spDamage)
-    {
-        currentHealth -= spDamage;
-        Debug.Log("Ouch! " + myName + " just took " + spDamage + " spell damage!");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
     }
 
     public virtual void Die()
