@@ -5,6 +5,7 @@ public class CharacterStats : MonoBehaviour
     public string myName;
     public string faction;
     public Sprite mySprite;
+    
 
     //Base Stats
     public int health;
@@ -15,18 +16,33 @@ public class CharacterStats : MonoBehaviour
     public int speed;
 
     public int maxHealth { get; private set; }
-    public int cooldown { get; private set; }
-   
+    public int currentHealth;
+    public bool alive;
+    public int cooldown;
+    
 
     void Start()
     {
         maxHealth = health;
-        cooldown = (10 - 10 * speed / 100);
+        currentHealth = maxHealth;
+        alive = true;
+        cooldown = (10 - 10 * speed / 100);        
     }
 
-    public virtual void Die()
+    
+    private void Update()
     {
-        //Die in some way - this is meant to be overwritten
-        Debug.Log("Oh no! " + myName + " has died!");
+        if(alive == false)
+        {
+            if(faction == "hero")
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 90);
+            }
+            else
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 270);
+            }
+        }
     }
+    
 }

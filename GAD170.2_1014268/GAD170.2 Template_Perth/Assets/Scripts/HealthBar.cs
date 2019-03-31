@@ -4,41 +4,35 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float health;
     public CharacterStats characterStats;
-    
+    public BattleLogic battleLogic;
 
-    void TakeDamage(int damage)
+    void Start()
     {
-        currentHealth =- damage;
+        maxHealth = characterStats.health;
     }
 
-    
     void Scale()
+    //This function should adjust the cooldown timers size
     {
-        transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
+        health = characterStats.health;
+        if (health <= 0)
+        {
+            characterStats.health = 0;
+            Die();
+        }
+        transform.localScale = new Vector3(health/maxHealth, 1, 1);
     }
 
     void Die()
     {
-        if (currentHealth <=0)
-        {
-            Destroy(gameObject);
-        }
-    }
-       
-    // Start is called before the first frame update
-    void Start()
-    {
-        maxHealth = characterStats.health;
-        currentHealth = maxHealth;
+        characterStats.alive = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Scale();
-        Die();
     }
 }

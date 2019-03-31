@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: 
+  myName: e2
   faction: enemy
   mySprite: {fileID: 21300000, guid: c0dd8e68137e93545afdc92c7448c74c, type: 3}
   health: 90
@@ -326,6 +326,7 @@ MonoBehaviour:
   spAttack: 0
   spDefence: 0
   speed: 40
+  currentHealth: 0
 --- !u!212 &5726428871019444835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -500,6 +501,8 @@ MonoBehaviour:
   maxCooldown: 0
   cooldownTimer: 0
   characterStats: {fileID: 6249322863582543881}
+  battleLogic: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &7233491555396144973
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,10 +544,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8197916673228861989}
   - component: {fileID: 6839368101251738495}
-  - component: {fileID: 2892326220664354890}
+  - component: {fileID: 6291498521031643651}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: HP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +614,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2892326220664354890
+--- !u!114 &6291498521031643651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -626,6 +629,7 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   characterStats: {fileID: 6249322863582543881}
+  battleLogic: {fileID: 0}
 --- !u!1 &8529386549941168065
 GameObject:
   m_ObjectHideFlags: 0

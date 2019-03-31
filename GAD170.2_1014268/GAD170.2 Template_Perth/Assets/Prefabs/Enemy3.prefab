@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 375447117174679222}
   - component: {fileID: 2197063742538752505}
-  - component: {fileID: 5958904130449090200}
+  - component: {fileID: 2185574758298495429}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: HP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5958904130449090200
+--- !u!114 &2185574758298495429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  currentHealth: 0
+  health: 0
   characterStats: {fileID: 8354935815726643410}
+  battleLogic: {fileID: 0}
 --- !u!1 &1477493414529331178
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,15 +172,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: 
+  myName: e3
   faction: enemy
   mySprite: {fileID: 21300000, guid: 67263fe137cd32047978b1e9634675f7, type: 3}
   health: 40
-  attack: 70
+  attack: 60
   defence: 40
   spAttack: 0
   spDefence: 0
   speed: 75
+  currentHealth: 0
+  alive: 0
+  cooldown: 0
 --- !u!212 &4586656810961074625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -483,6 +487,7 @@ MonoBehaviour:
   maxCooldown: 0
   cooldownTimer: 0
   characterStats: {fileID: 8354935815726643410}
+  battleLogic: {fileID: 0}
 --- !u!1 &5997691505615882058
 GameObject:
   m_ObjectHideFlags: 0
