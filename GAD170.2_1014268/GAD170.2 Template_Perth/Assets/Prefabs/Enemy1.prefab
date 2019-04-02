@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: e1
+  myName: Deadly Drow
   faction: enemy
   mySprite: {fileID: 21300000, guid: 816f717631ba7c34bb5075484aba64b9, type: 3}
   health: 70

@@ -10,23 +10,27 @@ public class CooldownBar : MonoBehaviour
     public BattleLogic battleLogic;
     private bool gameEnd;
     string winner;
-            
 
+    //This function should adjust the cooldown timers size.
     void Scale()
-        //This function should adjust the cooldown timers size
-    {
+    { 
         transform.localScale = new Vector3(cooldownTimer/maxCooldown, 1, 1);
     }
     
+    //This function should calculate and assign damage appropriately.
+    //This function should also trigger the end of the game when appropriate.
     void Attack()
     {
+        //assigns variables relevent to the cooldown bar
         float damage = 0f;
         float enemy1Health;
         float enemyResist;
         float hero1Health;
         float heroResist;
+
         if(characterStats.faction == "hero")
         {
+            //This method may be quite slow/resource heavy, however, since this project is a single game scene, I am not overly worried about speed issues.
             if (GameObject.Find("Enemy1(Clone)").GetComponent<CharacterStats>().alive == true)
             {
                 enemy1Health = GameObject.Find("Enemy1(Clone)").GetComponent<CharacterStats>().health;
@@ -109,7 +113,7 @@ public class CooldownBar : MonoBehaviour
         }
     }
 
-    
+    //This function should assign the cooldown speed of each character.
     void Start()
     {
         maxCooldown = characterStats.cooldown;
@@ -117,7 +121,7 @@ public class CooldownBar : MonoBehaviour
         gameEnd = false;
     }
 
-
+    //This function should cause the cooldown timer to reduce and reset appropriately, so long as the game continues.
     void Update()
     {
 

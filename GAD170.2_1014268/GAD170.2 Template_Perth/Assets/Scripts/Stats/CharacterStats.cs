@@ -15,12 +15,13 @@ public class CharacterStats : MonoBehaviour
     public int spDefence;
     public int speed;
 
+    //Secondy and/or functional stats
     public int maxHealth { get; private set; }
     public int currentHealth;
     public bool alive;
     public int cooldown;
     
-
+    //This should assign each characters health bar and cool down variables
     void Start()
     {
         maxHealth = health;
@@ -29,7 +30,7 @@ public class CharacterStats : MonoBehaviour
         cooldown = (10 - 10 * speed / 100);        
     }
 
-    
+    //This function shouldflip the character sprite, to indicate death
     private void Update()
     {
         if(alive == false)

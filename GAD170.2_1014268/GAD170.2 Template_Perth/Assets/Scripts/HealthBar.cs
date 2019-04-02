@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
+    //Assigns variables relevant to the healthbar functions
     public float maxHealth;
     public float health;
     public CharacterStats characterStats;
     public BattleLogic battleLogic;
 
+    //This function should set everyones health bar maximum 
     void Start()
     {
         maxHealth = characterStats.health;
     }
 
+    //This function should scale the health bar according to their percentage of health
     void Scale()
-    //This function should adjust the cooldown timers size
     {
         health = characterStats.health;
         if (health <= 0)
@@ -26,11 +28,13 @@ public class HealthBar : MonoBehaviour
         transform.localScale = new Vector3(health/maxHealth, 1, 1);
     }
 
+    //This function should trigger a character death
     void Die()
     {
         characterStats.alive = false;
     }
 
+    //This function should scale the health bart every frame
     private void Update()
     {
         Scale();

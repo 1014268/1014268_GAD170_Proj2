@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e27a5781028a7e4a8e466592b618f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: e2
+  myName: Frog Familiar
   faction: enemy
   mySprite: {fileID: 21300000, guid: c0dd8e68137e93545afdc92c7448c74c, type: 3}
   health: 90

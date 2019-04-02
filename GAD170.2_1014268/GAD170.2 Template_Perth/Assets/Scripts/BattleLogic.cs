@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BattleLogic : MonoBehaviour
 {
+    //These arrays should assign prefabs
     public CharacterStats[] heroes = new CharacterStats[3];
     public CharacterStats[] enemies = new CharacterStats[3];
 
@@ -14,14 +15,13 @@ public class BattleLogic : MonoBehaviour
     public GameObject[] enemyPrefabs = new GameObject[3];
 
 
-
+    //This function should trigger the prefabs spawning
     void Start()
     {
         SpawnIn();
-        //WriteText aa = Object.FindObjectOfType<WriteText>();
-        //aa.OutputText("im gay");
     }
 
+    //This function should spawn all the prefabs on the spawn points
     void SpawnIn()
     {
         //I want to spawn in my hero prefabs
