@@ -18,6 +18,8 @@ public class BattleLogic : MonoBehaviour
     void Start()
     {
         SpawnIn();
+        //WriteText aa = Object.FindObjectOfType<WriteText>();
+        //aa.OutputText("im gay");
     }
 
     void SpawnIn()

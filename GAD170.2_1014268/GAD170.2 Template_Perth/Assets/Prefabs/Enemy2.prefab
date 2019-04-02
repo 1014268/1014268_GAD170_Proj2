@@ -321,12 +321,14 @@ MonoBehaviour:
   faction: enemy
   mySprite: {fileID: 21300000, guid: c0dd8e68137e93545afdc92c7448c74c, type: 3}
   health: 90
-  attack: 40
+  attack: 20
   defence: 50
   spAttack: 0
   spDefence: 0
   speed: 40
   currentHealth: 0
+  alive: 0
+  cooldown: 0
 --- !u!212 &5726428871019444835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -502,7 +504,6 @@ MonoBehaviour:
   cooldownTimer: 0
   characterStats: {fileID: 6249322863582543881}
   battleLogic: {fileID: 0}
-  healthBar: {fileID: 0}
 --- !u!1 &7233491555396144973
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  currentHealth: 0
+  health: 0
   characterStats: {fileID: 6249322863582543881}
   battleLogic: {fileID: 0}
 --- !u!1 &8529386549941168065

@@ -11,7 +11,7 @@ public class WriteText : MonoBehaviour
     [Header("Controls how fast the text is written to the screen")]
     public float scrollSpeed;
 
-    [Range(0, 1)]
+    [Range(0, 5)]
     [Header("Controls how long the text box waits before dissapearing")]
     public float fadeSpeed;
 
@@ -20,6 +20,7 @@ public class WriteText : MonoBehaviour
     int characters, currentChar;
     string fullOutputText, outputText;
     bool isWriting = false;
+
 
     private void Awake()
     {
@@ -34,12 +35,12 @@ public class WriteText : MonoBehaviour
     /// <param name="text"></param>
     public void OutputText(string text)
     {
+        textBackground.enabled = true;
         if (isWriting)
             return;
 
         ResetValues();
 
-        textBackground.enabled = true;
 
         characters = text.Length;
         fullOutputText = text;
@@ -69,8 +70,11 @@ public class WriteText : MonoBehaviour
     void Delay()
     {
         ResetValues();
+        if(!isWriting)
+        {
+            //extBackground.enabled = false;
+        }
         isWriting = false;
-        textBackground.enabled = false;
     }
 
     void ResetValues()
